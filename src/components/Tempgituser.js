@@ -29,7 +29,7 @@ export default function Tempgituser({ loading }) {
   }, [loading,location.state,username]);
   useEffect(() => {
     fetch();
-  }, [fetch]);
+  }, []);
 
   return (
     <div style={{ marginTop: "5rem" }}>

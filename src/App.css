@@ -47,6 +47,9 @@
 .profile-comp{
   padding: 4rem 2rem;
 }
+.pointer{
+  cursor: pointer;
+}
 .one-bold{
   font-size: 1rem;
   font-weight: bold;
@@ -88,6 +91,7 @@
   border-top: 5px solid #000000;
   width: 70px;
   height: 70px;
+  z-index: 15000;
   -webkit-animation: spin 1s linear infinite; 
   animation: spin 1s linear infinite;
 }
