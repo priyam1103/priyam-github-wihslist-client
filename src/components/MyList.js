@@ -1,11 +1,11 @@
 import axios from "axios";
-import React, { useEffect, useState ,useContext} from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Card, Icon, Image } from "semantic-ui-react";
 import { GlobalContext } from "../context/GlobalState";
 import { useHistory } from "react-router-dom";
 export default function MyList() {
   let history = useHistory();
-  const {loading} = useContext(GlobalContext)
+  const { loading } = useContext(GlobalContext);
   const [data, setData] = useState([]);
   useEffect(() => {
     async function fetch() {
@@ -21,9 +21,9 @@ export default function MyList() {
           loading();
           setData(res.data.data_list);
         })
-          .catch((err) => {
-            loading();
-          });
+        .catch((err) => {
+          loading();
+        });
     }
     fetch();
   }, []);
@@ -32,29 +32,38 @@ export default function MyList() {
       {data.length > 0 ? (
         <div className="list">
           {data.map((item, index) => (
-            <>{item!==null &&  <Card style={{ cursor: "pointer" }} key={index} onClick={()=>{history.push({pathname:`/gitprofile/${item.username}`,state:item});}}>
-            <Image src={item.avatar_url} wrapped ui={false} />
-            <Card.Content>
-              <Card.Header>{item.name}</Card.Header>
-              <Card.Meta>
-                <span className="date">{item.username}</span>
-              </Card.Meta>
-              <Card.Description>{item.bio}</Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              
-                <Icon name="user" />
-                {item.public_repos} Public Repos
-              
-            </Card.Content>
-          </Card>}</>
-            
-             
+            <>
+              {item !== null && (
+                <Card
+                  style={{ cursor: "pointer" }}
+                  key={index}
+                  onClick={() => {
+                    history.push({
+                      pathname: `/gitprofile/${item.username}`,
+                      state: item,
+                    });
+                  }}
+                >
+                  <Image src={item.avatar_url} wrapped ui={false} />
+                  <Card.Content>
+                    <Card.Header>{item.name}</Card.Header>
+                    <Card.Meta>
+                      <span className="date">{item.username}</span>
+                    </Card.Meta>
+                    <Card.Description>{item.bio}</Card.Description>
+                  </Card.Content>
+                  <Card.Content extra>
+                    <Icon name="user" />
+                    {item.public_repos} Public Repos
+                  </Card.Content>
+                </Card>
+              )}
+            </>
           ))}
         </div>
-      ) :  <p className="center one-bold">
-      There is no profiles in your list.
-    </p>}
+      ) : (
+        <p className="center one-bold">There is no profiles in your list.</p>
+      )}
     </div>
   );
 }
