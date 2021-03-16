@@ -60,6 +60,9 @@ function App() {
           {" "}
           <Backdrop />
           <Loading />
+          <p className="auth-form-header center">
+            Github Wishlist
+          </p>
         </>
       ) : (
         <>

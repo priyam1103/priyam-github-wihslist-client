@@ -33,11 +33,11 @@ export default function MyList() {
       {data.length > 0 ? (
         <div className="list">
           {data.map((item, index) => (
-            <>
+            <div key={index}>
               {item !== null && (
                 <Card
                   style={{ cursor: "pointer" }}
-                  key={index}
+                  
                   onClick={() => {
                     history.push({
                       pathname: `/gitprofile/${item.username}`,
@@ -59,7 +59,7 @@ export default function MyList() {
                   </Card.Content>
                 </Card>
               )}
-            </>
+            </div>
           ))}
         </div>
       ) : (
