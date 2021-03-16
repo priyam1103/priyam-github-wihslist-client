@@ -33,7 +33,7 @@ export default function Tempgituser({ loading }) {
   }, []);
 
   return (
-    <div style={{ marginTop: "5rem" }}>
+    <div style={{ paddingTop: "5rem" }}>
       <Profile data={{ ...data, login: username, list: true }} />
     </div>
   );

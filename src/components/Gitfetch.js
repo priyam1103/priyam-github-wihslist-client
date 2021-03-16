@@ -41,7 +41,7 @@ export default function Gitfetch({loading}) {
       />
 
       {data.login ? (
-        <div className="center" style={{ marginTop: "1rem" }}>
+        <div className="center" style={{ marginTop: "5rem" }}>
           <Card
             onClick={() => {
               history.push(`/gitprofile/${data.login}`);

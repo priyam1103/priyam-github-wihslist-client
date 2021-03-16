@@ -43,7 +43,11 @@ function App() {
               loading();
               setAnonymus(false);
               update_user(res.data.user_);
-            });
+            }).catch(() => {
+              loading();
+              setAnonymus(false);
+              logout();
+            })
         } else {
           loading();
           setAnonymus(false);

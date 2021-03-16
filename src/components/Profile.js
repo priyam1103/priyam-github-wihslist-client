@@ -58,7 +58,7 @@ export default function Profile({ data }) {
   }
   return (
     <div className="profile-comp">
-      <div>
+      <div style={{ margin: 0,padding:0}}>
         {alert.alert && <AlertMessage message={alert.info} />}
         </div>
       <Item.Group>
