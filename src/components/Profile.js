@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-no-target-blank */
 import React, { useEffect, useState, useContext } from "react";
 import { Item, List, Icon } from "semantic-ui-react";

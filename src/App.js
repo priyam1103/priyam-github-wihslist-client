@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useContext, useState } from "react";
 import { GlobalContext } from "./context/GlobalState";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
